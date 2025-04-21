@@ -5,7 +5,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "node build-vercel.js",
+        "vercel:build": "node netlify_build.js && mkdir -p netlify_public && cp netlify_public/index.html dist/ && mkdir -p dist && cp -r netlify_public/* dist/",
         "netlify:build": "node netlify_build.js"
     },
     "devDependencies": {
