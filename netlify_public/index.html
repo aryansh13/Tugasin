@@ -1,106 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugasin - Jasa Pengerjaan Tugas Mahasiswa</title>
+    <title>Tugasin - Jasa Pengerjaan Tugas Terpercaya</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/logoTugasin.png" type="image/png">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #4F46E5;
-            --secondary-color: #8B5CF6;
-            --dark-color: #1F2937;
-            --light-color: #F9FAFB;
+            --primary-color: #256eb7;
+            --secondary-color: #1b4f84;
+            --accent-color: #4cc9f0;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --card-bg: #fff;
+            --footer-bg: #2b2d42;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-bg);
         }
         
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 6rem 0;
-            border-radius: 0 0 2rem 2rem;
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .hero h1 {
-            font-weight: 800;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .features {
-            padding: 5rem 0;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .pricing {
-            padding: 5rem 0;
-            background-color: #F3F4F6;
-            border-radius: 2rem;
-        }
-        
-        .pricing-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            height: 100%;
-        }
-        
-        .pricing-card.highlighted {
-            border: 2px solid var(--primary-color);
-            transform: scale(1.05);
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
+        .navbar-brand {
+            font-weight: 700;
             color: var(--primary-color);
-            margin: 1rem 0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg) !important;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            height: 100%;
+            background-color: var(--card-bg);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            padding: 0.75rem 2rem;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 50px;
             font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
         }
         
         .btn-outline-primary {
             color: var(--primary-color);
             border-color: var(--primary-color);
-            padding: 0.75rem 2rem;
+            padding: 10px 25px;
+            border-radius: 50px;
             font-weight: 600;
         }
         
@@ -109,44 +101,129 @@
             color: white;
         }
         
-        .contact {
-            padding: 5rem 0;
+        .testimonial-card {
+            padding: 30px;
+            text-align: center;
         }
         
-        footer {
-            background-color: var(--dark-color);
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+        }
+        
+        .pricing-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .footer {
+            background-color: var(--footer-bg);
             color: white;
-            padding: 3rem 0;
+            padding: 50px 0 20px;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
         }
         
         .social-icon {
-            color: white;
             font-size: 1.5rem;
-            margin-right: 1rem;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 70px 0;
+                text-align: center;
+            }
+            
+            .hero-section .btn {
+                margin: 5px;
+            }
+            
+            .hero-section .d-flex {
+                justify-content: center;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4F46E5;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Tugasin</a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logoTugasin.png" alt="Logo Tugasin" style="height: 40px; margin-right: 10px;">
+                Tugasin
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
+                        <a class="nav-link active" href="#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#services">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Pricing</a>
+                        <a class="nav-link" href="#why-us">Keunggulan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#testimonials">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Harga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order">Pesan</a>
                     </li>
                 </ul>
             </div>
@@ -154,54 +231,237 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1>Jasa Pengerjaan Tugas Mahasiswa</h1>
-                    <p class="lead mb-4">Kami hadir untuk membantu Anda menyelesaikan tugas kuliah dengan hasil berkualitas dan tepat waktu.</p>
-                    <a href="#contact" class="btn btn-light btn-lg">Hubungi Kami</a>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="fw-bold mb-4">Jasa Pengerjaan Tugas Mahasiswa Terpercaya</h1>
+                    <p class="lead mb-4">Kami menyediakan layanan joki tugas akademik yang profesional, tepat waktu, dan berkualitas tinggi untuk semua jenjang pendidikan.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#order" class="btn btn-light btn-lg">Pesan Sekarang</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">Lihat Layanan</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="https://via.placeholder.com/600x400" alt="Students studying" class="img-fluid rounded">
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Joki Tugas" class="img-fluid rounded-3" style="max-height: 400px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Services Section -->
+    <section class="section-padding bg-light" id="services">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Mengapa Memilih Kami?</h2>
-                <p class="lead text-muted">Layanan pengerjaan tugas terbaik dengan berbagai keunggulan</p>
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Layanan Kami</h2>
+                    <p class="lead">Kami menyediakan berbagai jenis layanan pengerjaan tugas akademik sesuai kebutuhan Anda</p>
+                </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-check"></i>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                            <h4 class="mb-3">Makalah & Essay</h4>
+                            <p>Layanan pembuatan makalah, essay, paper, dan berbagai jenis tugas tertulis lainnya dengan riset yang mendalam.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
                         </div>
-                        <h3>Kualitas Terjamin</h3>
-                        <p>Tugas dikerjakan oleh tim ahli dengan latar belakang akademik yang sesuai. Hasil dijamin berkualitas tinggi.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h4 class="mb-3">Skripsi & Thesis</h4>
+                            <p>Bantuan dalam penyusunan skripsi, thesis, disertasi dengan metodologi penelitian yang sesuai standar akademik.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
                         </div>
-                        <h3>Tepat Waktu</h3>
-                        <p>Kami menjamin pengerjaan tugas selesai sesuai dengan tenggat waktu yang telah disepakati.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lock"></i>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h4 class="mb-3">Tugas Pemrograman</h4>
+                            <p>Jasa pengerjaan tugas coding, pemrograman, dan proyek IT dengan berbagai bahasa pemrograman populer.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
                         </div>
-                        <h3>Kerahasiaan Terjaga</h3>
-                        <p>Privasi dan kerahasiaan Anda adalah prioritas kami. Semua informasi yang Anda berikan akan dijaga kerahasiaannya.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                            <h4 class="mb-3">Presentasi PowerPoint</h4>
+                            <p>Pembuatan slide presentasi yang profesional, informatif, dan menarik untuk keperluan akademik dan bisnis.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+                            <h4 class="mb-3">Desain Grafis</h4>
+                            <p>Layanan desain grafis untuk berbagai keperluan akademik seperti poster, infografis, dan ilustrasi.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon"><i class="fas fa-tasks"></i></div>
+                            <h4 class="mb-3">Tugas Lainnya</h4>
+                            <p>Berbagai jenis tugas lainnya seperti rangkuman, resume, laporan praktikum, dan tugas-tugas kuliah lainnya.</p>
+                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-padding" id="why-us">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Keunggulan Kami</h2>
+                    <p class="lead">Mengapa memilih layanan Tugasin untuk membantu tugas akademik Anda?</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-check-circle fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>100% Tepat Waktu</h4>
+                            <p>Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang telah disepakati tanpa mengecewakan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-gem fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Kualitas Terjamin</h4>
+                            <p>Tugas dikerjakan oleh tim profesional berpengalaman dengan standar akademik tinggi dan bebas plagiarisme.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-sync-alt fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Revisi Gratis</h4>
+                            <p>Kami memberikan revisi gratis untuk memastikan hasil kerja kami sesuai dengan kebutuhan dan keinginan Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-lock fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Kerahasiaan Terjaga</h4>
+                            <p>Kami menjamin 100% kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-money-bill-wave fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Harga Terjangkau</h4>
+                            <p>Kami menawarkan harga yang kompetitif dan terjangkau dengan berbagai pilihan paket sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary">
+                            <i class="fas fa-headset fa-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Dukungan 24/7</h4>
+                            <p>Tim customer service kami siap membantu Anda 24/7 untuk menjawab pertanyaan dan memberikan solusi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-light" id="testimonials">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Apa Kata Mereka?</h2>
+                    <p class="lead">Testimonial dari pelanggan yang telah menggunakan layanan kami</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="card-body">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
+                            <h5 class="mb-3">Risa Amalia</h5>
+                            <p class="text-muted mb-3">Mahasiswa Ilmu Komunikasi</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-0">"Saya sangat puas dengan hasil makalah yang dikerjakan. Tepat waktu dan sesuai dengan ketentuan dosen. Terima kasih Tugasin!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="card-body">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
+                            <h5 class="mb-3">Bima Satria</h5>
+                            <p class="text-muted mb-3">Mahasiswa Teknik Informatika</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="mb-0">"Tugas pemrograman saya dikerjakan dengan baik dan berfungsi sempurna. Penjelasan kodenya juga sangat detail sehingga saya bisa memahaminya."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="card testimonial-card h-100">
+                        <div class="card-body">
+                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
+                            <h5 class="mb-3">Anita Wijaya</h5>
+                            <p class="text-muted mb-3">Mahasiswa Manajemen</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-0">"Presentasi yang dibuat sangat menarik dan profesional. Dosen saya sangat terkesan dengan hasilnya. Terima kasih banyak!"</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,156 +469,262 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="section-padding" id="pricing">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Paket Harga</h2>
-                <p class="lead text-muted">Pilih paket yang sesuai dengan kebutuhan Anda</p>
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Daftar Harga</h2>
+                    <p class="lead">Kami menawarkan berbagai paket dengan harga yang kompetitif sesuai kebutuhan Anda</p>
+                </div>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="pricing-card">
-                        <h3>Basic</h3>
-                        <div class="price">Rp150k</div>
-                        <p>Cocok untuk tugas dengan tingkat kesulitan rendah</p>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Tugas Kuliah Dasar</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Revisi 1x</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Pengerjaan 3-5 hari</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                    <div class="card pricing-card h-100">
+                        <div class="card-body">
+                            <h4 class="mb-0">Basic</h4>
+                            <div class="price">Rp150K</div>
+                            <p class="text-muted mb-4">Untuk tugas dasar dengan tingkat kesulitan rendah</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Makalah 5-10 halaman</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas kuliah biasa</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi 1x</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Deadline 3-7 hari</li>
+                                <li class="list-group-item border-0 ps-0 text-muted"><i class="fas fa-times-circle me-2"></i> Pengerjaan Express</li>
+                            </ul>
+                            <a href="#order" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="pricing-card highlighted">
-                        <h3>Standard</h3>
-                        <div class="price">Rp250k</div>
-                        <p>Untuk tugas dengan tingkat kesulitan menengah</p>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Tugas Kuliah Menengah</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Revisi 2x</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Pengerjaan 3-5 hari</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Konsultasi via WhatsApp</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-primary w-100">Pilih Paket</a>
+                    <div class="card pricing-card h-100" style="transform: scale(1.05); border: 2px solid var(--primary-color);">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Paling Populer</span>
+                            <h4 class="mb-0">Standard</h4>
+                            <div class="price">Rp250K</div>
+                            <p class="text-muted mb-4">Untuk tugas dengan tingkat kesulitan menengah</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Makalah 10-20 halaman</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> PPT 15-25 slide</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas pemrograman dasar</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi 2x</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Deadline 3-5 hari</li>
+                            </ul>
+                            <a href="#order" class="btn btn-primary w-100">Pilih Paket</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="pricing-card">
-                        <h3>Premium</h3>
-                        <div class="price">Rp350k+</div>
-                        <p>Untuk tugas dengan tingkat kesulitan tinggi</p>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Tugas Kuliah Kompleks</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Revisi Unlimited</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Pengerjaan Express</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Konsultasi via Video Call</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Pendampingan Presentasi</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                    <div class="card pricing-card h-100">
+                        <div class="card-body">
+                            <h4 class="mb-0">Premium</h4>
+                            <div class="price">Rp350K+</div>
+                            <p class="text-muted mb-4">Untuk tugas dengan tingkat kesulitan tinggi</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Skripsi, thesis, disertasi</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas pemrograman kompleks</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Proyek desain lengkap</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi unlimited</li>
+                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Pengerjaan Express (1-2 hari)</li>
+                            </ul>
+                            <a href="#order" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Order Section -->
+    <section class="section-padding bg-light" id="order">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Hubungi Kami</h2>
-                <p class="lead text-muted">Kirim pesan untuk konsultasi dan pemesanan</p>
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Pesan Sekarang</h2>
+                    <p class="lead">Isi formulir di bawah ini untuk memulai pemesanan atau konsultasi</p>
+                </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form id="contactForm">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="whatsapp" class="form-label">Nomor WhatsApp</label>
-                                <input type="text" class="form-control" id="whatsapp" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="subject" class="form-label">Judul Tugas</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Deskripsi Tugas</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <label for="deadline" class="form-label">Deadline</label>
-                                <input type="date" class="form-control" id="deadline" required>
-                            </div>
-                            <div class="col-12 text-center mt-4">
-                                <button type="button" class="btn btn-primary btn-lg px-5" onclick="sendWhatsApp()">Kirim Pesan via WhatsApp</button>
-                            </div>
+                    <div class="card">
+                        <div class="card-body p-4 p-md-5">
+                            <form id="orderForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="whatsapp" class="form-label">Nomor WhatsApp</label>
+                                        <input type="text" class="form-control" id="whatsapp" placeholder="Contoh: 081234567890" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Masukkan email aktif Anda" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="taskType" class="form-label">Jenis Tugas</label>
+                                        <select class="form-select" id="taskType" required>
+                                            <option value="" selected disabled>Pilih jenis tugas</option>
+                                            <option value="makalah">Makalah & Essay</option>
+                                            <option value="skripsi">Skripsi & Thesis</option>
+                                            <option value="programming">Tugas Pemrograman</option>
+                                            <option value="presentation">Presentasi PowerPoint</option>
+                                            <option value="design">Desain Grafis</option>
+                                            <option value="other">Lainnya</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="deadline" class="form-label">Deadline</label>
+                                        <input type="date" class="form-control" id="deadline" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="description" class="form-label">Deskripsi Tugas</label>
+                                        <textarea class="form-control" id="description" rows="5" placeholder="Jelaskan secara detail tentang tugas Anda, termasuk ketentuan, format, dan ekspektasi Anda" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="terms" required>
+                                            <label class="form-check-label" for="terms">
+                                                Saya menyetujui <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">syarat dan ketentuan</a> yang berlaku
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-primary btn-lg w-100" onclick="sendWhatsApp()">Kirim Pesan via WhatsApp</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4 class="fw-bold">Tugasin</h4>
-                    <p>Jasa pengerjaan tugas mahasiswa berkualitas dengan harga terjangkau dan hasil memuaskan.</p>
-                    <div class="mt-3">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="images/logoTugasin.png" alt="Logo Tugasin" style="height: 50px; margin-right: 15px;">
+                        <h3 class="m-0 fw-bold">Tugasin</h3>
+                    </div>
+                    <p class="mb-4">Layanan jasa pengerjaan tugas mahasiswa yang profesional, terpercaya, dan berkualitas tinggi untuk semua jenjang pendidikan.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5>Layanan</h5>
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Layanan</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tugas Makalah</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tugas Presentasi</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tugas Pemrograman</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tugas Desain</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tugas Riset</a></li>
+                        <li class="mb-3"><a href="#services">Makalah & Essay</a></li>
+                        <li class="mb-3"><a href="#services">Skripsi & Thesis</a></li>
+                        <li class="mb-3"><a href="#services">Tugas Pemrograman</a></li>
+                        <li class="mb-3"><a href="#services">Presentasi PowerPoint</a></li>
+                        <li class="mb-3"><a href="#services">Desain Grafis</a></li>
+                        <li class="mb-3"><a href="#services">Tugas Lainnya</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h5>Kontak</h5>
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="fw-bold mb-4">Kontak Kami</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Jakarta, Indonesia</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +62 812-3456-7890</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@tugasin.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Senin - Minggu, 09:00 - 21:00</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i> Jakarta, Indonesia</li>
+                        <li class="mb-3"><i class="fas fa-phone-alt me-3"></i> +62 812-3456-7890</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-3"></i> info@tugasin.com</li>
+                        <li class="mb-3"><i class="fas fa-clock me-3"></i> Senin - Minggu, 08:00 - 22:00 WIB</li>
                     </ul>
                 </div>
             </div>
-            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
-            <p class="text-center mb-0">&copy; 2023 Tugasin. Hak Cipta Dilindungi.</p>
+            <hr class="my-4" style="background-color: rgba(255, 255, 255, 0.1);">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2023 Tugasin. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white me-3">Terms of Service</a>
+                    <a href="#" class="text-white">FAQ</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Syarat dan Ketentuan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Umum</h6>
+                    <p>Dengan menggunakan layanan Tugasin, Anda menyetujui semua syarat dan ketentuan yang berlaku.</p>
+                    
+                    <h6>2. Layanan</h6>
+                    <p>Kami menyediakan layanan pengerjaan tugas akademik sebagai referensi dan bantuan belajar.</p>
+                    
+                    <h6>3. Pembayaran</h6>
+                    <p>Pembayaran dilakukan dengan sistem DP (Down Payment) sebesar 50% di awal dan pelunasan setelah pekerjaan selesai.</p>
+                    
+                    <h6>4. Revisi</h6>
+                    <p>Revisi diberikan sesuai dengan paket yang Anda pilih dan harus diajukan dalam waktu 7 hari setelah hasil dikirimkan.</p>
+                    
+                    <h6>5. Deadline</h6>
+                    <p>Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang disepakati.</p>
+                    
+                    <h6>6. Kerahasiaan</h6>
+                    <p>Kami menjamin kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
+                    
+                    <h6>7. Tanggung Jawab</h6>
+                    <p>Hasil pekerjaan dari Tugasin adalah sebagai referensi dan bantuan belajar. Klien bertanggung jawab penuh atas penggunaan hasil pekerjaan tersebut.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Saya Mengerti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- WhatsApp Send Function -->
     <script>
         function sendWhatsApp() {
             const name = document.getElementById('name').value;
             const whatsapp = document.getElementById('whatsapp').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            const email = document.getElementById('email').value;
+            const taskType = document.getElementById('taskType').value;
             const deadline = document.getElementById('deadline').value;
+            const description = document.getElementById('description').value;
+            const terms = document.getElementById('terms').checked;
             
-            if (!name || !whatsapp || !subject || !message || !deadline) {
+            // Form validation
+            if (!name || !whatsapp || !email || !taskType || !deadline || !description) {
                 alert('Mohon lengkapi semua field.');
                 return;
             }
             
-            const text = `Halo Tugasin, saya ingin menggunakan jasa pengerjaan tugas.%0A%0ANama: ${name}%0AWhatsApp: ${whatsapp}%0AJudul Tugas: ${subject}%0ADeskripsi: ${message}%0ADeadline: ${deadline}`;
+            if (!terms) {
+                alert('Anda harus menyetujui syarat dan ketentuan.');
+                return;
+            }
             
-            window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+            // Create WhatsApp message
+            const message = `Halo Tugasin, saya ingin menggunakan jasa pengerjaan tugas.%0A%0A*Data Diri*%0ANama: ${name}%0AWhatsApp: ${whatsapp}%0AEmail: ${email}%0A%0A*Detail Tugas*%0AJenis: ${taskType}%0ADeadline: ${deadline}%0ADeskripsi: ${description}`;
+            
+            // Open WhatsApp in new tab
+            window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
         }
     </script>
 </body>
