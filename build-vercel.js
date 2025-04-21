@@ -109,7 +109,7 @@ if (fs.existsSync(netlifyIndexPath)) {
         <h1>Tugasin</h1>
         <p class="lead">Jasa Pengerjaan Tugas Mahasiswa Terpercaya</p>
         <p>Layanan kami membantu Anda menyelesaikan tugas kuliah dengan hasil berkualitas dan tepat waktu.</p>
-        <a href="https://wa.me/6281234567890?text=Halo%20Tugasin%2C%20saya%20ingin%20menggunakan%20jasa%20pengerjaan%20tugas" class="btn btn-primary btn-lg">Hubungi Kami via WhatsApp</a>
+        <a href="https://wa.me/6285225397226?text=Halo%20Tugasin%2C%20saya%20ingin%20menggunakan%20jasa%20pengerjaan%20tugas" class="btn btn-primary btn-lg">Hubungi Kami via WhatsApp</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
