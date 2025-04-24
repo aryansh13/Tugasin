@@ -1,154 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" class="dark:bg-gray-950">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugasin - Jasa Pengerjaan Tugas Terpercaya</title>
     <!-- Favicon -->
     <link rel="icon" href="images/logoTugasin.png" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Aceternity UI -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        :root {
-            --primary-color: #256eb7;
-            --secondary-color: #1b4f84;
-            --accent-color: #4cc9f0;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --card-bg: #fff;
-            --footer-bg: #2b2d42;
+        
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: #e2e8f0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            overflow-x: hidden;
-            background-color: var(--light-bg);
+        .dark-mode-toggle.active {
+            background-color: #1e293b;
         }
         
-        .navbar {
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 100px 0;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .bg-light {
-            background-color: var(--light-bg) !important;
-        }
-        
-        .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 20px;
-            height: 100%;
-            background-color: var(--card-bg);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .testimonial-card {
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .testimonial-avatar {
-            width: 80px;
-            height: 80px;
+        .dark-mode-toggle:after {
+            content: "";
+            position: absolute;
+            width: 23px;
+            height: 23px;
             border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
+            background: linear-gradient(180deg, #ffcc89, #d8860b);
+            top: 1px;
+            left: 1px;
+            transition: all 0.3s ease;
         }
         
-        .pricing-card {
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 20px 0;
-        }
-        
-        .footer {
-            background-color: var(--footer-bg);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: white;
-        }
-        
-        .social-icon {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            transition: transform 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px);
+        .dark-mode-toggle.active:after {
+            left: 26px;
+            background: linear-gradient(180deg, #777, #3a3a3a);
         }
         
         .whatsapp-float {
@@ -167,90 +65,147 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
         }
         
         .whatsapp-float:hover {
+            transform: scale(1.1);
             background-color: #128C7E;
         }
-
-        /* Responsive Adjustments */
-        @media (max-width: 991.98px) {
-            .hero-section {
-                padding: 70px 0;
-                text-align: center;
-            }
-            
-            .hero-section .btn {
-                margin: 5px;
-            }
-            
-            .hero-section .d-flex {
-                justify-content: center;
-            }
-            
-            .section-padding {
-                padding: 60px 0;
+    </style>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"},
+                        secondary: {"50":"#f8fafc","100":"#f1f5f9","200":"#e2e8f0","300":"#cbd5e1","400":"#94a3b8","500":"#64748b","600":"#475569","700":"#334155","800":"#1e293b","900":"#0f172a","950":"#020617"},
+                        accent: {"50":"#e3f2fd","100":"#bbdefb","200":"#90caf9","300":"#64b5f6","400":"#42a5f5","500":"#2196f3","600":"#1e88e5","700":"#1976d2","800":"#1565c0","900":"#0d47a1","950":"#083982"},
+                    },
+                    animation: {
+                        scroll: "scroll 60s linear infinite",
+                        "meteor-effect": "meteor 5s linear infinite",
+                    },
+                    keyframes: {
+                        scroll: {
+                            "0%": { transform: "translateX(0)" },
+                            "100%": { transform: "translateX(-100%)" },
+                        },
+                    },
+                },
+                fontFamily: {
+                    'sans': ['Poppins', 'sans-serif'],
+                }
             }
         }
-    </style>
+    </script>
 </head>
-<body>
+<body class="antialiased font-sans bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+    <div class="meteor-effect">
+        <div class="meteor"></div>
+        <div class="meteor" style="top: 15%; left: 20%; animation-delay: 2s;"></div>
+        <div class="meteor" style="top: 30%; left: 80%; animation-delay: 4s;"></div>
+        <div class="meteor" style="top: 55%; left: 10%; animation-delay: 6s;"></div>
+        <div class="meteor" style="top: 75%; left: 60%; animation-delay: 8s;"></div>
+    </div>
+    
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="images/logoTugasin.png" alt="Logo Tugasin" style="height: 40px; margin-right: 10px;">
-                Tugasin
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Layanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#why-us">Keunggulan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonial</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Harga</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#order">Pesan</a>
-                    </li>
-                </ul>
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="images/logoTugasin.png" alt="Tugasin Logo" class="h-8 w-auto mr-2">
+                        <span class="text-primary-700 dark:text-primary-400 font-bold text-xl">Tugasin</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
+                    <a href="#services" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Layanan</a>
+                    <a href="#why-us" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Keunggulan</a>
+                    <a href="#testimonials" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Testimoni</a>
+                    <a href="#pricing" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Harga</a>
+                    <a href="#order" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Pesan</a>
+                    <div class="flex items-center ml-4">
+                        <div class="dark-mode-toggle" id="darkModeToggle"></div>
+                        <span class="dark-mode-icon ml-2"><i class="fas fa-moon"></i></span>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto px-4 pt-2 pb-4 space-y-3">
+                <a href="#home" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Beranda</a>
+                <a href="#services" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Layanan</a>
+                <a href="#why-us" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Keunggulan</a>
+                <a href="#testimonials" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Testimoni</a>
+                <a href="#pricing" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Harga</a>
+                <a href="#order" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Pesan</a>
+                <div class="flex items-center pt-2">
+                    <div class="dark-mode-toggle" id="mobileToggle"></div>
+                    <span class="dark-mode-icon ml-2"><i class="fas fa-moon"></i></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h1 class="fw-bold mb-4">Jasa Pengerjaan Tugas Mahasiswa Terpercaya</h1>
-                    <p class="lead mb-4">Kami menyediakan layanan joki tugas akademik yang profesional, tepat waktu, dan berkualitas tinggi untuk semua jenjang pendidikan.</p>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#order" class="btn btn-light btn-lg">Pesan Sekarang</a>
-                        <a href="#services" class="btn btn-outline-light btn-lg">Lihat Layanan</a>
+    <section id="home" class="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+        <!-- Background elements for hero -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-600/20 dark:from-primary-900/30 dark:to-accent-900/30"></div>
+            <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        <span class="inline-block">
+                            Jasa Pengerjaan
+                            <span class="relative">
+                                <span class="absolute inset-x-0 bottom-0 h-3 bg-accent-400/30 dark:bg-accent-500/30"></span>
+                                <span class="relative">Tugas Mahasiswa</span>
+                            </span>
+                            Terpercaya
+                        </span>
+                    </h1>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Kami menyediakan layanan joki tugas akademik yang profesional, tepat waktu, dan berkualitas tinggi untuk semua jenjang pendidikan.</p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#order" class="inline-flex h-12 items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600">
+                            Pesan Sekarang
+                        </a>
+                        <a href="#services" class="inline-flex h-12 items-center justify-center rounded-full border border-primary-600 bg-transparent px-6 py-3 text-sm font-medium text-primary-600 transition-colors hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-gray-800">
+                            Lihat Layanan
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Joki Tugas" class="img-fluid rounded-3" style="max-height: 400px;">
+                <div class="relative">
+                    <div class="relative mx-auto max-w-[500px]">
+                        <div class="absolute -bottom-10 -left-10 h-72 w-72 rounded-full bg-accent-400/30 dark:bg-accent-900/40 blur-3xl"></div>
+                        <div class="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-primary-400/30 dark:bg-primary-900/40 blur-3xl"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl dark:border-gray-800">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Joki Tugas" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-gray-900/20 to-gray-900/0 dark:from-gray-900/40 dark:to-gray-900/10"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section-padding bg-light" id="services">
+    <section class="py-20 bg-white">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-lg-8 mx-auto">
@@ -469,61 +424,114 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section-padding" id="pricing">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">Daftar Harga</h2>
-                    <p class="lead">Kami menawarkan berbagai paket dengan harga yang kompetitif sesuai kebutuhan Anda</p>
-                </div>
+    <section id="pricing" class="py-20 bg-white dark:bg-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <!-- Background grid pattern -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Daftar Harga</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Kami menawarkan berbagai paket dengan harga yang kompetitif sesuai kebutuhan Anda</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card pricing-card h-100">
-                        <div class="card-body">
-                            <h4 class="mb-0">Basic</h4>
-                            <div class="price">Rp25K - 100K</div>
-                            <p class="text-muted mb-4">Untuk tugas dasar dengan tingkat kesulitan rendah</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Makalah 5-10 halaman</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas kuliah biasa</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi 1x</li>
-                            </ul>
-                            <a href="#order" class="btn btn-outline-primary w-100">Pilih Paket</a>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-primary-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Basic</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mb-4">Untuk tugas dasar dengan tingkat kesulitan rendah</p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-primary-600 dark:text-primary-400">Rp25K - 100K</span>
                         </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Makalah 5-10 halaman</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Tugas kuliah biasa</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Revisi 1x</span>
+                            </div>
+                        </div>
+                        <a href="#order" class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-gray-700 transition-colors">
+                            Pilih Paket
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card pricing-card h-100" style="transform: scale(1.05); border: 2px solid var(--primary-color);">
-                        <div class="card-body">
-                            <span class="badge bg-primary mb-2">Paling Populer</span>
-                            <h4 class="mb-0">Standard</h4>
-                            <div class="price">Rp100K - 450K</div>
-                            <p class="text-muted mb-4">Untuk tugas dengan tingkat kesulitan menengah</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Makalah 10-20 halaman</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> PPT 15-25 slide</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas pemrograman dasar</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi 2x</li>
-                            </ul>
-                            <a href="#order" class="btn btn-primary w-100">Pilih Paket</a>
+                
+                <!-- Standard Package -->
+                <div class="group relative z-10 scale-105">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl blur group-hover:opacity-75 transition duration-300 opacity-50"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 border-2 border-primary-500 dark:border-primary-400 overflow-hidden">
+                        <div class="absolute top-0 right-0">
+                            <div class="bg-primary-600 text-white text-xs font-semibold py-1 px-3 rounded-bl-lg">Paling Populer</div>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Standard</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mb-4">Untuk tugas dengan tingkat kesulitan menengah</p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-primary-600 dark:text-primary-400">Rp100K - 450K</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Makalah 10-20 halaman</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">PPT 15-25 slide</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Tugas pemrograman dasar</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Revisi 2x</span>
+                            </div>
+                        </div>
+                        <a href="#order" class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+                            Pilih Paket
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card pricing-card h-100">
-                        <div class="card-body">
-                            <h4 class="mb-0">Premium</h4>
-                            <div class="price">Rp350K+</div>
-                            <p class="text-muted mb-4">Untuk tugas dengan tingkat kesulitan tinggi</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Skripsi, thesis, disertasi</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Tugas pemrograman kompleks</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Proyek desain lengkap</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check-circle text-primary me-2"></i> Revisi 3x</li>
-                            </ul>
-                            <a href="#order" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                
+                <!-- Premium Package -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-accent-600 to-accent-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Premium</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mb-4">Untuk tugas dengan tingkat kesulitan tinggi</p>
+                        <div class="mb-6">
+                            <span class="text-3xl font-bold text-accent-600 dark:text-accent-400">Rp350K+</span>
                         </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-600 dark:text-accent-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Skripsi, thesis, disertasi</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-600 dark:text-accent-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Tugas pemrograman kompleks</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-600 dark:text-accent-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Proyek desain lengkap</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-600 dark:text-accent-400 mt-1 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Revisi 3x</span>
+                            </div>
+                        </div>
+                        <a href="#order" class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-accent-600 dark:text-accent-400 border border-accent-600 dark:border-accent-400 rounded-lg hover:bg-accent-50 dark:hover:bg-gray-700 transition-colors">
+                            Pilih Paket
+                        </a>
                     </div>
                 </div>
             </div>
@@ -531,169 +539,191 @@
     </section>
 
     <!-- Order Section -->
-    <section class="section-padding bg-light" id="order">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">Pesan Sekarang</h2>
-                    <p class="lead">Isi formulir di bawah ini untuk memulai pemesanan atau konsultasi</p>
+    <section id="order" class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute h-96 w-96 rounded-full bg-primary-200/20 dark:bg-primary-800/20 -top-40 -right-20 blur-3xl"></div>
+            <div class="absolute h-96 w-96 rounded-full bg-accent-200/20 dark:bg-accent-800/20 -bottom-40 -left-20 blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Pesan Sekarang</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Isi formulir di bawah ini untuk memulai pemesanan atau konsultasi</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8">
+                        <form id="orderForm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name" placeholder="Masukkan nama lengkap Anda" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                </div>
+                                <div>
+                                    <label for="whatsapp" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nomor WhatsApp</label>
+                                    <input type="text" id="whatsapp" placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                    <input type="email" id="email" placeholder="Masukkan email aktif Anda" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                </div>
+                                <div>
+                                    <label for="taskType" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Jenis Tugas</label>
+                                    <select id="taskType" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                        <option value="" selected disabled>Pilih jenis tugas</option>
+                                        <option value="makalah">Makalah & Essay</option>
+                                        <option value="skripsi">Skripsi & Thesis</option>
+                                        <option value="programming">Tugas Pemrograman</option>
+                                        <option value="presentation">Presentasi PowerPoint</option>
+                                        <option value="design">Desain Grafis</option>
+                                        <option value="other">Lainnya</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="deadline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Deadline</label>
+                                    <input type="date" id="deadline" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Deskripsi Tugas</label>
+                                    <textarea id="description" rows="5" placeholder="Jelaskan secara detail tentang tugas Anda, termasuk ketentuan, format, dan ekspektasi Anda" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white" required></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" id="terms" class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600" required>
+                                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                                            Saya menyetujui <button type="button" class="text-primary-600 dark:text-primary-400 underline" onclick="document.getElementById('termsModal').classList.toggle('hidden')">syarat dan ketentuan</button> yang berlaku
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="md:col-span-2 mt-4">
+                                    <button type="button" onclick="sendWhatsApp()" class="inline-flex w-full h-12 items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600">
+                                        Kirim Pesan via WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body p-4 p-md-5">
-                            <form id="orderForm">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="name" class="form-label">Nama Lengkap</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="whatsapp" class="form-label">Nomor WhatsApp</label>
-                                        <input type="text" class="form-control" id="whatsapp" placeholder="Contoh: 081234567890" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Masukkan email aktif Anda" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="taskType" class="form-label">Jenis Tugas</label>
-                                        <select class="form-select" id="taskType" required>
-                                            <option value="" selected disabled>Pilih jenis tugas</option>
-                                            <option value="makalah">Makalah & Essay</option>
-                                            <option value="skripsi">Skripsi & Thesis</option>
-                                            <option value="programming">Tugas Pemrograman</option>
-                                            <option value="presentation">Presentasi PowerPoint</option>
-                                            <option value="design">Desain Grafis</option>
-                                            <option value="other">Lainnya</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="deadline" class="form-label">Deadline</label>
-                                        <input type="date" class="form-control" id="deadline" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="description" class="form-label">Deskripsi Tugas</label>
-                                        <textarea class="form-control" id="description" rows="5" placeholder="Jelaskan secara detail tentang tugas Anda, termasuk ketentuan, format, dan ekspektasi Anda" required></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="terms" required>
-                                            <label class="form-check-label" for="terms">
-                                                Saya menyetujui <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">syarat dan ketentuan</a> yang berlaku
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <button type="button" class="btn btn-primary btn-lg w-100" onclick="sendWhatsApp()">Kirim Pesan via WhatsApp</button>
-                                    </div>
-                                </div>
-                            </form>
+        </div>
+        
+        <!-- Terms Modal -->
+        <div id="termsModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm hidden">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Syarat dan Ketentuan</h3>
+                        <button type="button" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" onclick="document.getElementById('termsModal').classList.toggle('hidden')">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">1. Umum</h4>
+                            <p>Dengan menggunakan layanan Tugasin, Anda menyetujui semua syarat dan ketentuan yang berlaku.</p>
                         </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">2. Layanan</h4>
+                            <p>Kami menyediakan layanan pengerjaan tugas akademik sebagai referensi dan bantuan belajar.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">3. Pembayaran</h4>
+                            <p>Pembayaran dilakukan dengan sistem DP (Down Payment) sebesar 50% di awal dan pelunasan setelah pekerjaan selesai.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">4. Revisi</h4>
+                            <p>Revisi diberikan sesuai dengan paket yang Anda pilih dan harus diajukan dalam waktu 7 hari setelah hasil dikirimkan.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">5. Deadline</h4>
+                            <p>Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang disepakati.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">6. Kerahasiaan</h4>
+                            <p>Kami menjamin kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">7. Tanggung Jawab</h4>
+                            <p>Hasil pekerjaan dari Tugasin adalah sebagai referensi dan bantuan belajar. Klien bertanggung jawab penuh atas penggunaan hasil pekerjaan tersebut.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button type="button" class="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 border border-transparent rounded-lg hover:bg-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500" onclick="document.getElementById('termsModal').classList.toggle('hidden')">
+                            Saya Mengerti
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="d-flex align-items-center mb-4">
-                        <img src="images/logoTugasin.png" alt="Logo Tugasin" style="height: 50px; margin-right: 15px;">
-                        <h3 class="m-0 fw-bold">Tugasin</h3>
-                    </div>
-                    <p class="mb-4">Layanan jasa pengerjaan tugas mahasiswa yang profesional, terpercaya, dan berkualitas tinggi untuk semua jenjang pendidikan.</p>
-                    <div class="d-flex">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <h5 class="fw-bold mb-4">Layanan</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><a href="#services">Makalah & Essay</a></li>
-                        <li class="mb-3"><a href="#services">Skripsi & Thesis</a></li>
-                        <li class="mb-3"><a href="#services">Tugas Pemrograman</a></li>
-                        <li class="mb-3"><a href="#services">Presentasi PowerPoint</a></li>
-                        <li class="mb-3"><a href="#services">Desain Grafis</a></li>
-                        <li class="mb-3"><a href="#services">Tugas Lainnya</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <h5 class="fw-bold mb-4">Kontak Kami</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i> Semarang, Indonesia</li>
-                        <li class="mb-3"><i class="fas fa-phone-alt me-3"></i> +62 852-2539-7226</li>
-                        <li class="mb-3"><i class="fas fa-envelope me-3"></i> info@tugasin.com</li>
-                        <li class="mb-3"><i class="fas fa-clock me-3"></i> Senin - Minggu, 08:00 - 22:00 WIB</li>
-                    </ul>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <!-- Background grid pattern -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Hubungi Kami</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Punya pertanyaan? Hubungi kami melalui kontak berikut</p>
             </div>
-            <hr class="my-4" style="background-color: rgba(255, 255, 255, 0.1);">
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">&copy; 2025 Tugasin. All rights reserved.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Card 1: Phone -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-primary-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center">
+                        <div class="w-14 h-14 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-phone-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Telepon / WhatsApp</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">+62 852 2539 7226</p>
+                        <a href="https://wa.me/6285225397226" class="inline-flex items-center justify-center px-5 py-3 border border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-gray-700 transition-colors" target="_blank">
+                            Chat Sekarang
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-white me-3">Privacy Policy</a>
-                    <a href="#" class="text-white me-3">Terms of Service</a>
-                    <a href="#" class="text-white">FAQ</a>
+                
+                <!-- Contact Card 2: Email -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-accent-600 to-accent-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center">
+                        <div class="w-14 h-14 rounded-full bg-accent-50 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Email</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">info@jokitugas.com</p>
+                        <a href="mailto:info@jokitugas.com" class="inline-flex items-center justify-center px-5 py-3 border border-accent-600 dark:border-accent-400 text-accent-600 dark:text-accent-400 rounded-lg hover:bg-accent-50 dark:hover:bg-gray-700 transition-colors">
+                            Kirim Email
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Card 3: Location -->
+                <div class="group relative">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-primary-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    <div class="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center">
+                        <div class="w-14 h-14 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-map-marker-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Lokasi</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Jakarta, Indonesia</p>
+                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-gray-700 transition-colors">
+                            Lihat Peta
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6285225397226" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Terms Modal -->
-    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="termsModalLabel">Syarat dan Ketentuan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>1. Umum</h6>
-                    <p>Dengan menggunakan layanan Tugasin, Anda menyetujui semua syarat dan ketentuan yang berlaku.</p>
-                    
-                    <h6>2. Layanan</h6>
-                    <p>Kami menyediakan layanan pengerjaan tugas akademik sebagai referensi dan bantuan belajar.</p>
-                    
-                    <h6>3. Pembayaran</h6>
-                    <p>Pembayaran dilakukan dengan sistem DP (Down Payment) sebesar 50% di awal dan pelunasan setelah pekerjaan selesai.</p>
-                    
-                    <h6>4. Revisi</h6>
-                    <p>Revisi diberikan sesuai dengan paket yang Anda pilih dan harus diajukan dalam waktu 7 hari setelah hasil dikirimkan.</p>
-                    
-                    <h6>5. Deadline</h6>
-                    <p>Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang disepakati.</p>
-                    
-                    <h6>6. Kerahasiaan</h6>
-                    <p>Kami menjamin kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
-                    
-                    <h6>7. Tanggung Jawab</h6>
-                    <p>Hasil pekerjaan dari Tugasin adalah sebagai referensi dan bantuan belajar. Klien bertanggung jawab penuh atas penggunaan hasil pekerjaan tersebut.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Saya Mengerti</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <!-- WhatsApp Send Function -->
     <script>
         function sendWhatsApp() {
@@ -722,6 +752,96 @@
             // Open WhatsApp in new tab
             window.open(`https://wa.me/6285225397226?text=${message}`, '_blank');
         }
+    </script>
+
+    <script>
+        // Create meteors dynamically
+        function createMeteors(count) {
+            const meteorEffect = document.querySelector('.meteor-effect');
+            for (let i = 0; i < count; i++) {
+                const meteor = document.createElement('div');
+                meteor.classList.add('meteor');
+                meteor.style.left = `${Math.random() * 100}%`;
+                meteor.style.top = `${Math.random() * 100}%`;
+                meteor.style.animationDelay = `${Math.random() * 10}s`;
+                meteorEffect.appendChild(meteor);
+                
+                // Add sparks
+                for (let j = 0; j < 3; j++) {
+                    const spark = document.createElement('div');
+                    spark.classList.add('spark');
+                    spark.style.left = `${Math.random() * 3 - 1.5}px`;
+                    spark.style.top = `${Math.random() * 60}px`;
+                    spark.style.animationDelay = `${Math.random() * 2}s`;
+                    meteor.appendChild(spark);
+                }
+            }
+        }
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const darkModeIcon = document.querySelector('.dark-mode-icon i');
+            const htmlElement = document.documentElement;
+            
+            function toggleDarkMode(isActive) {
+                if (isActive) {
+                    htmlElement.classList.add('dark');
+                    darkModeToggle.classList.add('active');
+                    if (mobileToggle) mobileToggle.classList.add('active');
+                    darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    htmlElement.classList.remove('dark');
+                    darkModeToggle.classList.remove('active');
+                    if (mobileToggle) mobileToggle.classList.remove('active');
+                    darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+            
+            // Check for saved theme preference or use user's system preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                toggleDarkMode(savedTheme === 'dark');
+            } else {
+                // Use system preference as default
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    toggleDarkMode(true);
+                }
+            }
+            
+            // Toggle dark mode
+            darkModeToggle.addEventListener('click', function() {
+                toggleDarkMode(!this.classList.contains('active'));
+            });
+            
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    toggleDarkMode(!this.classList.contains('active'));
+                });
+            }
+            
+            // Close navbar when clicking a nav item (on mobile)
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            mobileNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Create meteors
+            createMeteors(10);
+        });
     </script>
 </body>
 </html> 
