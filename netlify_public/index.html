@@ -205,73 +205,126 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-20 bg-white">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">Layanan Kami</h2>
-                    <p class="lead">Kami menyediakan berbagai jenis layanan pengerjaan tugas akademik sesuai kebutuhan Anda</p>
-                </div>
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Layanan Kami</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Kami menyediakan berbagai jenis layanan pengerjaan tugas akademik sesuai kebutuhan Anda</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
-                            <h4 class="mb-3">Makalah & Essay</h4>
-                            <p>Layanan pembuatan makalah, essay, paper, dan berbagai jenis tugas tertulis lainnya dengan riset yang mendalam.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <!-- Card top light effect -->
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-primary-500/20 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400 mb-6">
+                            <i class="fas fa-file-alt text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Makalah & Essay</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Layanan pembuatan makalah, essay, paper, dan berbagai jenis tugas tertulis lainnya dengan riset yang mendalam.</p>
+                        <a href="#order" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <h4 class="mb-3">Skripsi & Thesis</h4>
-                            <p>Bantuan dalam penyusunan skripsi, thesis, disertasi dengan metodologi penelitian yang sesuai standar akademik.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+                <!-- Service Card 2 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-accent-500/20 rounded-full blur-3xl group-hover:bg-accent-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent-50 dark:bg-gray-700 text-accent-600 dark:text-accent-400 mb-6">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Skripsi & Thesis</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Bantuan dalam penyusunan skripsi, thesis, disertasi dengan metodologi penelitian yang sesuai standar akademik.</p>
+                        <a href="#order" class="inline-flex items-center text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h4 class="mb-3">Tugas Pemrograman</h4>
-                            <p>Jasa pengerjaan tugas coding, pemrograman, dan proyek IT dengan berbagai bahasa pemrograman populer.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+                <!-- Service Card 3 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-primary-500/20 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400 mb-6">
+                            <i class="fas fa-laptop-code text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Tugas Pemrograman</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Jasa pengerjaan tugas coding, pemrograman, dan proyek IT dengan berbagai bahasa pemrograman populer.</p>
+                        <a href="#order" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                            <h4 class="mb-3">Presentasi PowerPoint</h4>
-                            <p>Pembuatan slide presentasi yang profesional, informatif, dan menarik untuk keperluan akademik dan bisnis.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+                <!-- Service Card 4 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-accent-500/20 rounded-full blur-3xl group-hover:bg-accent-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent-50 dark:bg-gray-700 text-accent-600 dark:text-accent-400 mb-6">
+                            <i class="fas fa-chart-line text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Presentasi PowerPoint</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Pembuatan slide presentasi yang profesional, informatif, dan menarik untuk keperluan akademik dan bisnis.</p>
+                        <a href="#order" class="inline-flex items-center text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
-                            <h4 class="mb-3">Desain Grafis</h4>
-                            <p>Layanan desain grafis untuk berbagai keperluan akademik seperti poster, infografis, dan ilustrasi.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+                <!-- Service Card 5 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-primary-500/20 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400 mb-6">
+                            <i class="fas fa-paint-brush text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Desain Grafis</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Layanan desain grafis untuk berbagai keperluan akademik seperti poster, infografis, dan ilustrasi.</p>
+                        <a href="#order" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon"><i class="fas fa-tasks"></i></div>
-                            <h4 class="mb-3">Tugas Lainnya</h4>
-                            <p>Berbagai jenis tugas lainnya seperti rangkuman, resume, laporan praktikum, dan tugas-tugas kuliah lainnya.</p>
-                            <a href="#order" class="btn btn-outline-primary mt-3">Pesan Sekarang</a>
+
+                <!-- Service Card 6 -->
+                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-800/30 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl overflow-hidden">
+                    <div class="absolute -top-10 -left-10 h-20 w-40 bg-accent-500/20 rounded-full blur-3xl group-hover:bg-accent-500/30 transition-all duration-500 group-hover:h-24 group-hover:w-48"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-accent-50 dark:bg-gray-700 text-accent-600 dark:text-accent-400 mb-6">
+                            <i class="fas fa-tasks text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Tugas Lainnya</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Berbagai jenis tugas lainnya seperti rangkuman, resume, laporan praktikum, dan tugas-tugas kuliah lainnya.</p>
+                        <a href="#order" class="inline-flex items-center text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors">
+                            Pesan Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -279,78 +332,100 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="section-padding" id="why-us">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">Keunggulan Kami</h2>
-                    <p class="lead">Mengapa memilih layanan Tugasin untuk membantu tugas akademik Anda?</p>
-                </div>
+    <section id="why-us" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <!-- Background grid pattern -->
+            <div class="absolute inset-0 bg-white dark:bg-gray-950 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#303030_1px,transparent_1px),linear-gradient(to_bottom,#303030_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Keunggulan Kami</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Mengapa memilih layanan Tugasin untuk membantu tugas akademik Anda?</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-check-circle fa-3x"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Feature 1 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-900/20">
+                            <i class="fas fa-check-circle text-2xl text-primary-600 dark:text-primary-400"></i>
+                            <!-- Shine effect -->
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
-                        <div>
-                            <h4>100% Tepat Waktu</h4>
-                            <p>Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang telah disepakati tanpa mengecewakan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-gem fa-3x"></i>
-                        </div>
-                        <div>
-                            <h4>Kualitas Terjamin</h4>
-                            <p>Tugas dikerjakan oleh tim profesional berpengalaman dengan standar akademik tinggi dan bebas plagiarisme.</p>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">100% Tepat Waktu</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Kami berkomitmen untuk menyelesaikan tugas sesuai dengan deadline yang telah disepakati tanpa mengecewakan.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-sync-alt fa-3x"></i>
+
+                <!-- Feature 2 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-900/20">
+                            <i class="fas fa-gem text-2xl text-accent-600 dark:text-accent-400"></i>
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
-                        <div>
-                            <h4>Revisi Gratis</h4>
-                            <p>Kami memberikan revisi gratis 1x24 Jam untuk memastikan hasil kerja kami sesuai dengan kebutuhan dan keinginan Anda.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-lock fa-3x"></i>
-                        </div>
-                        <div>
-                            <h4>Kerahasiaan Terjaga</h4>
-                            <p>Kami menjamin 100% kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Kualitas Terjamin</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Tugas dikerjakan oleh tim profesional berpengalaman dengan standar akademik tinggi dan bebas plagiarisme.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-money-bill-wave fa-3x"></i>
+
+                <!-- Feature 3 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-900/20">
+                            <i class="fas fa-sync-alt text-2xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
-                        <div>
-                            <h4>Harga Terjangkau</h4>
-                            <p>Kami menawarkan harga yang kompetitif dan terjangkau dengan berbagai pilihan paket sesuai kebutuhan.</p>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Revisi Gratis</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Kami memberikan revisi gratis untuk memastikan hasil kerja kami sesuai dengan kebutuhan dan keinginan Anda.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-primary">
-                            <i class="fas fa-headset fa-3x"></i>
+
+                <!-- Feature 4 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-900/20">
+                            <i class="fas fa-lock text-2xl text-accent-600 dark:text-accent-400"></i>
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
-                        <div>
-                            <h4>Dukungan 24/7</h4>
-                            <p>Tim customer service kami siap membantu Anda 24/7 untuk menjawab pertanyaan dan memberikan solusi.</p>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Kerahasiaan Terjaga</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Kami menjamin 100% kerahasiaan data dan identitas klien serta transaksi yang dilakukan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-900/20">
+                            <i class="fas fa-money-bill-wave text-2xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Harga Terjangkau</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Kami menawarkan harga yang kompetitif dan terjangkau dengan berbagai pilihan paket sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800/50 dark:shadow-gray-700/10 dark:hover:shadow-gray-700/20">
+                    <div class="flex gap-5">
+                        <div class="relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-900/20">
+                            <i class="fas fa-headset text-2xl text-accent-600 dark:text-accent-400"></i>
+                            <div class="absolute h-full w-full rounded-xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Dukungan 24/7</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Tim customer service kami siap membantu Anda 24/7 untuk menjawab pertanyaan dan memberikan solusi.</p>
                         </div>
                     </div>
                 </div>
@@ -359,63 +434,116 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section-padding bg-light" id="testimonials">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold mb-3">Apa Kata Mereka?</h2>
-                    <p class="lead">Testimonial dari pelanggan yang telah menggunakan layanan kami</p>
-                </div>
+    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 right-0 h-96 overflow-hidden z-0">
+            <div class="absolute h-80 w-80 rounded-full bg-primary-200/20 dark:bg-primary-800/20 -top-40 -left-20 blur-3xl"></div>
+            <div class="absolute h-80 w-80 rounded-full bg-accent-200/20 dark:bg-accent-800/20 top-60 right-10 blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Apa Kata Mereka?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Testimonial dari pelanggan yang telah menggunakan layanan kami</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card testimonial-card h-100">
-                        <div class="card-body">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
-                            <h5 class="mb-3">Risa Amalia</h5>
-                            <p class="text-muted mb-3">Mahasiswa Ilmu Komunikasi</p>
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="relative group">
+                    <!-- Card glow effect -->
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    
+                    <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6">
+                            <div class="flex justify-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="w-20 h-20 rounded-full object-cover ring-4 ring-gray-100 dark:ring-gray-700">
                             </div>
-                            <p class="mb-0">"Saya sangat puas dengan hasil makalah yang dikerjakan. Tepat waktu dan sesuai dengan ketentuan dosen. Terima kasih Tugasin!"</p>
+                            <h3 class="text-xl font-semibold text-center text-gray-900 dark:text-white mb-1">Risa Amalia</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-center text-sm mb-4">Mahasiswa Ilmu Komunikasi</p>
+                            
+                            <!-- Star rating -->
+                            <div class="flex justify-center mb-4">
+                                <div class="flex space-x-1">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <svg class="absolute -top-6 -left-6 h-12 w-12 text-gray-300 dark:text-gray-700 transform -scale-x-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                            </svg>
+                            <p class="relative text-gray-600 dark:text-gray-300 text-center">"Saya sangat puas dengan hasil makalah yang dikerjakan. Tepat waktu dan sesuai dengan ketentuan dosen. Terima kasih Tugasin!"</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card testimonial-card h-100">
-                        <div class="card-body">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
-                            <h5 class="mb-3">Bima Satria</h5>
-                            <p class="text-muted mb-3">Mahasiswa Teknik Informatika</p>
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star-half-alt text-warning"></i>
+
+                <!-- Testimonial 2 -->
+                <div class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    
+                    <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6">
+                            <div class="flex justify-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="w-20 h-20 rounded-full object-cover ring-4 ring-gray-100 dark:ring-gray-700">
                             </div>
-                            <p class="mb-0">"Tugas pemrograman saya dikerjakan dengan baik dan berfungsi sempurna. Penjelasan kodenya juga sangat detail sehingga saya bisa memahaminya."</p>
+                            <h3 class="text-xl font-semibold text-center text-gray-900 dark:text-white mb-1">Bima Satria</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-center text-sm mb-4">Mahasiswa Teknik Informatika</p>
+                            
+                            <!-- Star rating -->
+                            <div class="flex justify-center mb-4">
+                                <div class="flex space-x-1">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <svg class="absolute -top-6 -left-6 h-12 w-12 text-gray-300 dark:text-gray-700 transform -scale-x-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                            </svg>
+                            <p class="relative text-gray-600 dark:text-gray-300 text-center">"Tugas pemrograman saya dikerjakan dengan baik dan berfungsi sempurna. Penjelasan kodenya juga sangat detail sehingga saya bisa memahaminya."</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mx-auto">
-                    <div class="card testimonial-card h-100">
-                        <div class="card-body">
-                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="testimonial-avatar">
-                            <h5 class="mb-3">Anita Wijaya</h5>
-                            <p class="text-muted mb-3">Mahasiswa Manajemen</p>
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
+
+                <!-- Testimonial 3 -->
+                <div class="relative group lg:col-span-1 md:col-span-2 md:mx-auto">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                    
+                    <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="mb-6">
+                            <div class="flex justify-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Client" class="w-20 h-20 rounded-full object-cover ring-4 ring-gray-100 dark:ring-gray-700">
                             </div>
-                            <p class="mb-0">"Presentasi yang dibuat sangat menarik dan profesional. Dosen saya sangat terkesan dengan hasilnya. Terima kasih banyak!"</p>
+                            <h3 class="text-xl font-semibold text-center text-gray-900 dark:text-white mb-1">Anita Wijaya</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-center text-sm mb-4">Mahasiswa Manajemen</p>
+                            
+                            <!-- Star rating -->
+                            <div class="flex justify-center mb-4">
+                                <div class="flex space-x-1">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <svg class="absolute -top-6 -left-6 h-12 w-12 text-gray-300 dark:text-gray-700 transform -scale-x-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                            </svg>
+                            <p class="relative text-gray-600 dark:text-gray-300 text-center">"Presentasi yang dibuat sangat menarik dan profesional. Dosen saya sangat terkesan dengan hasilnya. Terima kasih banyak!"</p>
                         </div>
                     </div>
                 </div>
@@ -724,6 +852,72 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="images/logoTugasin.png" alt="Tugasin Logo" class="h-6 w-auto mr-2">
+                        <span class="text-primary-400 font-bold text-lg">Tugasin</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Layanan jasa pengerjaan tugas akademik terpercaya dengan hasil terbaik dan tepat waktu.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-lg mb-4">Layanan</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Makalah & Essay</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Skripsi & Thesis</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Tugas Pemrograman</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Presentasi PowerPoint</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Desain Grafis</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-lg mb-4">Tautan</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Layanan</a></li>
+                        <li><a href="#why-us" class="text-gray-400 hover:text-white transition-colors">Keunggulan</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimoni</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Harga</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition-colors">Pesan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold text-lg mb-4">Kontak</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-400"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-primary-400"></i>
+                            <span>+62 852 2539 7226</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary-400"></i>
+                            <span>info@jokitugas.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-800">
+            <div class="text-center text-gray-500">
+                <p>&copy; 2025 Tugasin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- WhatsApp Send Function -->
     <script>
         function sendWhatsApp() {
@@ -755,28 +949,6 @@
     </script>
 
     <script>
-        // Create meteors dynamically
-        function createMeteors(count) {
-            const meteorEffect = document.querySelector('.meteor-effect');
-            for (let i = 0; i < count; i++) {
-                const meteor = document.createElement('div');
-                meteor.classList.add('meteor');
-                meteor.style.left = `${Math.random() * 100}%`;
-                meteor.style.top = `${Math.random() * 100}%`;
-                meteor.style.animationDelay = `${Math.random() * 10}s`;
-                meteorEffect.appendChild(meteor);
-                
-                // Add sparks
-                for (let j = 0; j < 3; j++) {
-                    const spark = document.createElement('div');
-                    spark.classList.add('spark');
-                    spark.style.left = `${Math.random() * 3 - 1.5}px`;
-                    spark.style.top = `${Math.random() * 60}px`;
-                    spark.style.animationDelay = `${Math.random() * 2}s`;
-                    meteor.appendChild(spark);
-                }
-            }
-        }
         
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -843,5 +1015,11 @@
             createMeteors(10);
         });
     </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285225397226" class="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#128C7E]" target="_blank">
+        <span class="absolute h-full w-full animate-ping rounded-full bg-[#25d366] opacity-75"></span>
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 </body>
 </html> 
